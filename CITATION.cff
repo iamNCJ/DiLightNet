@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "Cite as below if you find this repository is helpful to your project"
+url: "https://github.com/iamNCJ/DiLightNet"
+preferred-citation:
+  type: conference-paper
+  authors:
+  - family-names: "Zeng"
+    given-names: "Chong"
+  - family-names: "Dong"
+    given-names: "Yue"
+  - family-names: "Peers"
+    given-names: "Pieter"
+  - family-names: "Kong"
+    given-names: "Youkang"
+  - family-names: "Wu"
+    given-names: "Hongzhi"
+  - family-names: "Tong"
+    given-names: "Xin"
+  doi: "10.1145/3641519.3657396"
+  title: "DiLightNet: Fine-grained Lighting Control for Diffusion-based Image Generation"
+  booktitle: "ACM SIGGRAPH 2024 Conference Proceedings"
+  year: 2024
