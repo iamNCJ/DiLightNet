@@ -1,0 +1,13 @@
+numpy
+scipy
+diffusers==0.27.2
+transformers==4.39.3
+accelerate==0.29.1
+opencv-contrib-python==4.9.0.80
+tqdm
+wandb
+lpips==0.1.4
+torchmetrics==0.11.3
+imageio==2.33.1
+bitsandbytes==0.41.3.post2
+einops==0.7.0
