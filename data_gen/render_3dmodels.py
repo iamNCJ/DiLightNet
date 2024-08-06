@@ -123,6 +123,7 @@ def render_core(args: Options):
         camera = create_camera(c2w, fov)
         bpy.context.scene.camera = camera
         view_path = f'{res_dir}/view_{eye_idx}'
+        os.makedirs(view_path, exist_ok=True)
         with stdout_redirected():
             render_depth_map(view_path)
         # save cam info
@@ -142,6 +143,7 @@ def render_core(args: Options):
             power = random.uniform(500, 1500)
             _point_light = create_point_light(pl, power)
             ref_pl_path = f'{view_path}/white_pl_{white_pl_idx}'
+            os.makedirs(ref_pl_path, exist_ok=True)
             with stdout_redirected():
                 render_rgb_and_hint(f'{ref_pl_path}/gt')
             # save point light info
@@ -165,6 +167,7 @@ def render_core(args: Options):
             rgb = [random.uniform(0, 1) for _ in range(3)]
             _point_light = create_point_light(pl, power, rgb=rgb)
             ref_pl_path = f'{view_path}/rgb_pl_{rgb_pl_idx}'
+            os.makedirs(ref_pl_path, exist_ok=True)
             with stdout_redirected():
                 render_rgb_and_hint(f'{ref_pl_path}/gt')
             # save point light info
@@ -189,6 +192,7 @@ def render_core(args: Options):
             for pl_idx in range(args.max_pl_num):
                 _point_light = create_point_light(pls[pl_idx], powers[pl_idx], keep_other_lights=pl_idx > 0)
             ref_pl_path = f'{view_path}/multi_pl_{multi_pl_idx}'
+            os.makedirs(ref_pl_path, exist_ok=True)
             with stdout_redirected():
                 render_rgb_and_hint(f'{ref_pl_path}/gt')
             # save point light info
@@ -205,6 +209,7 @@ def render_core(args: Options):
             strength = 1.0
             set_env_light(env_map_path, rotation_euler=rotation_euler, strength=strength)
             env_path = f'{view_path}/white_env_{env_idx}'
+            os.makedirs(env_path, exist_ok=True)
             with stdout_redirected():
                 render_rgb_and_hint(f'{env_path}/gt')
             # save env map info
@@ -222,6 +227,7 @@ def render_core(args: Options):
             strength = 1.0  # random.uniform(0.8, 1.2)
             set_env_light(env_map_path, rotation_euler=rotation_euler, strength=strength)
             env_path = f'{view_path}/env_{env_map_idx}'
+            os.makedirs(env_path, exist_ok=True)
             with stdout_redirected():
                 render_rgb_and_hint(f'{env_path}/gt')
             # save env map info
@@ -246,6 +252,7 @@ def render_core(args: Options):
             area_light_size = random.uniform(5., 10.)
             _area_light = create_area_light(area_light_pos, area_light_power, area_light_size)
             area_path = f'{view_path}/area_{area_light_idx}'
+            os.makedirs(area_path, exist_ok=True)
             with stdout_redirected():
                 render_rgb_and_hint(f'{area_path}/gt')
             # save area light info
