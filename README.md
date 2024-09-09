@@ -387,7 +387,7 @@ If you find our work useful in your research, please consider citing:
 @inproceedings {zeng2024dilightnet,
     title      = {DiLightNet: Fine-grained Lighting Control for Diffusion-based Image Generation},
     author     = {Chong Zeng and Yue Dong and Pieter Peers and Youkang Kong and Hongzhi Wu and Xin Tong},
-    booktitle  = {ACM SIGGRAPH 2024 Conference Proceedings},
+    booktitle  = {ACM SIGGRAPH 2024 Conference Papers},
     year       = {2024}
 }
 ```
