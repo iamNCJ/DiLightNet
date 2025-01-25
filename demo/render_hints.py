@@ -1,3 +1,4 @@
+import os
 import multiprocessing
 import tempfile
 from multiprocessing import Process
@@ -48,7 +49,7 @@ def render_hint_images(model_path, fov, pls, power=500., geo_smooth=True, output
 
             # and png
             bpy.context.scene.render.image_settings.file_format = 'PNG'
-            bpy.context.scene.render.filepath = f'{output_path}{mat_name}.png'
+            bpy.context.scene.render.filepath = os.path.abspath(f'{output_path}{mat_name}.png')
             bpy.ops.render.render(animation=False, write_still=True)
 
     # Render hints
