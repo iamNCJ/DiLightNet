@@ -182,4 +182,4 @@ with gr.Blocks(title="DiLightNet Demo") as demo:
 
 
 if __name__ == '__main__':
-    demo.queue().launch(server_name="0.0.0.0", share=True)
+    demo.queue().launch(server_name="0.0.0.0", share=False)
