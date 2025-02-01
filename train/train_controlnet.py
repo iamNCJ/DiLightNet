@@ -1081,7 +1081,7 @@ def main(args):
                         accelerator.save_state(save_path)
                         logger.info(f"Saved state to {save_path}")
 
-                    if global_step == 1 or global_step % args.validation_steps:
+                    if global_step == 1 or global_step % args.validation_steps == 0:
                         # intentionally log step 1 to serve as sanity check
                         image_logs = log_validation(
                             vae,
